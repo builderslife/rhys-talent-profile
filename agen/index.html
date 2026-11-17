@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RHYS Talent Profile - Agen Internal</title>
+<meta name="description" content="Asesmen internal RHYS untuk agen: gaya DISC dan Top 5 kekuatan, ditafsirkan untuk industri asuransi.">
+<meta property="og:title" content="RHYS Talent Profile - Agen Internal">
+<meta property="og:description" content="Kenali cara Anda menang: gaya perilaku DISC dan Top 5 kekuatan Anda dalam ±8 menit.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='6' width='56' height='44' rx='14' fill='%230B0B0C'/%3E%3Cpath d='M14 46 L14 60 L28 46 Z' fill='%230B0B0C'/%3E%3Ctext x='32' y='37' font-family='Arial Black,Arial' font-weight='900' font-size='26' fill='white' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: monochrome editorial column with heavy wide uppercase type echoing the RHYS wordmark;
+   one question per screen, two taps per question; the result opens with a black screenshot-sized card. */
+:root{
+  --bg:#F2F2F0; --surface:#FFFFFF; --ink:#0B0B0C; --muted:#6A6A67; --line:#DEDEDA; --soft:#E9E9E6;
+  --on-ink:#FFFFFF;
+  --d:#CF3F38; --i:#D9930D; --s:#2A8F62; --c:#335CCB;
+  --display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --body:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
+  --logo-filter:none;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0B0C; --surface:#151517; --ink:#F1F1EE; --muted:#9A9A95; --line:#2A2A2D; --soft:#1E1E21;
+    --on-ink:#0B0B0C; --d:#EE645C; --i:#F0B23C; --s:#43BC86; --c:#7593F0; --logo-filter:invert(1);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0B0C; --surface:#151517; --ink:#F1F1EE; --muted:#9A9A95; --line:#2A2A2D; --soft:#1E1E21;
+  --on-ink:#0B0B0C; --d:#EE645C; --i:#F0B23C; --s:#43BC86; --c:#7593F0; --logo-filter:invert(1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.wrap.wide{max-width:960px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0 16px;border-bottom:1px solid var(--line)}
+.logo{height:22px;width:auto;filter:var(--logo-filter);display:block}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.disp{font-family:var(--display);font-variation-settings:"wdth" 116;font-weight:850;text-transform:uppercase;letter-spacing:-.012em;line-height:.95;text-wrap:balance;margin:0}
+h1.disp{font-size:clamp(42px,9vw,88px)}
+h2.disp{font-size:clamp(28px,5.4vw,50px)}
+h3.disp{font-size:clamp(22px,3.4vw,30px)}
+.lede{font-size:clamp(17px,2.4vw,19px);color:var(--muted);max-width:56ch;margin:18px 0 0}
+p{max-width:65ch}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.bubble{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:34px;padding:0 10px;border-radius:12px;background:var(--ink);color:var(--on-ink);font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+.bubble::after{content:"";position:absolute;left:9px;bottom:-7px;border-left:8px solid var(--ink);border-bottom:8px solid transparent}
+
+.btn{appearance:none;border:0;border-radius:999px;padding:15px 26px;background:var(--ink);color:var(--on-ink);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;transition:transform .15s ease,opacity .15s;min-height:50px}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.28;cursor:not-allowed;transform:none}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.quiet{background:transparent;color:var(--muted);padding:15px 4px}
+.btn.quiet:hover{color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* intro */
+.hero{padding:48px 0 26px}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.how-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.how-card b{font-family:var(--display);font-variation-settings:"wdth" 116;font-weight:800;text-transform:uppercase;font-size:17px}
+.mini-opts{display:grid;gap:6px}
+.mini-opts span{border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:13px;display:flex;justify-content:space-between;gap:8px;color:var(--muted)}
+.mini-opts span.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.mini-opts span.off{border-color:var(--ink);color:var(--ink);border-style:dashed}
+.mini-opts em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+@media (max-width:560px){.how{grid-template-columns:1fr}}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--muted);margin-bottom:26px}
+.facts b{color:var(--ink)}
+form.who{display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.field{display:grid;gap:6px}
+.field label{font-size:13px;font-weight:600;letter-spacing:.02em}
+.field input{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:14px;outline:none;font-size:16px}
+.field input:focus{border-color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+.err{color:var(--d);font-size:14px;min-height:1em;margin:0}
+.resume{background:var(--surface);border:1px solid var(--ink);border-radius:20px;padding:18px 20px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+
+/* question */
+.qhead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:26px 0 10px}
+.progress{height:3px;background:var(--soft);border-radius:3px;overflow:hidden;margin:6px 0 26px}
+.progress i{display:block;height:100%;background:var(--ink);transition:width .25s ease}
+.stepper{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.stepper span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--muted)}
+.stepper span.cur{border-color:var(--ink);color:var(--ink);font-weight:600}
+.stepper span.done{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.prompt{font-size:clamp(26px,5vw,40px);margin-bottom:22px}
+.prompt mark{background:var(--ink);color:var(--on-ink);padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;min-height:66px;cursor:pointer;font-size:clamp(16px,2.4vw,18px);line-height:1.35;transition:border-color .12s,background .12s,transform .12s}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:active:not(:disabled){transform:scale(.99)}
+.opt .lb{flex:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+.opt.most{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.opt.most .lb{background:var(--on-ink);color:var(--ink)}
+.opt.least{border-color:var(--ink);border-style:dashed;color:var(--muted)}
+.opt.least .txt{text-decoration:line-through;text-decoration-thickness:1px}
+.opt.least .lb{background:var(--soft);color:var(--ink)}
+.opt:disabled{cursor:default}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0 60px;flex-wrap:wrap}
+
+/* results */
+.demo-banner{background:var(--ink);color:var(--on-ink);text-align:center;padding:9px 16px;font-size:13px;font-family:var(--mono);letter-spacing:.06em}
+.shot-tip{display:flex;gap:12px;align-items:flex-start;padding:26px 0 16px}
+.shot-tip p{margin:0}
+.rcard{background:#0B0B0C;color:#F4F4F1;border-radius:28px;padding:26px 24px 22px;display:grid;gap:18px;max-width:560px;margin:0 auto;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+:root[data-theme="dark"] .rcard{box-shadow:inset 0 0 0 1px #2A2A2D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rcard{box-shadow:inset 0 0 0 1px #2A2A2D}}
+.rcard .top-row{display:flex;justify-content:space-between;align-items:center}
+.rcard .logo{height:20px}
+.rcard .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A95}
+.rcard .nm{font-family:var(--display);font-variation-settings:"wdth" 116;font-weight:850;text-transform:uppercase;font-size:clamp(28px,7vw,40px);line-height:.95;letter-spacing:-.01em;margin:6px 0 4px;text-wrap:balance}
+.rcard ol{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid #2A2A2D}
+.rcard li{display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid #2A2A2D}
+.rcard li .n{font-family:var(--display);font-variation-settings:"wdth" 125;font-weight:900;font-size:24px;line-height:1}
+.rcard li .t{font-family:var(--display);font-variation-settings:"wdth" 112;font-weight:800;text-transform:uppercase;font-size:clamp(18px,4.6vw,22px);line-height:1.05}
+.rcard li .d{font-size:12px;color:#9A9A95}
+.rcard .disc-row{display:flex;align-items:center;gap:14px}
+.rcard .sw{display:flex;gap:4px}
+.rcard .sw span{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:20px;color:#fff}
+.rcard .foot{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#9A9A95;flex-wrap:wrap}
+
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:14px;color:var(--muted)}
+section.blk{padding:52px 0 8px}
+.sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-n{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.top{display:grid;grid-template-columns:110px 1fr;gap:10px 26px;padding:32px 0;border-bottom:1px solid var(--line)}
+.top:last-child{border-bottom:0}
+.rank{font-family:var(--display);font-variation-settings:"wdth" 125;font-weight:900;font-size:84px;line-height:.82;letter-spacing:-.04em}
+.chip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:500;margin-left:8px;vertical-align:middle;font-family:var(--body);text-transform:none;letter-spacing:0}
+.top .desc{font-size:18px;margin:12px 0 0}
+.facets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.facet{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.facet.full{grid-column:1/-1}
+.facet h4{margin:0 0 8px;font-size:12px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.facet p,.facet ul{margin:0;font-size:15px}
+.facet ul{padding-left:18px;display:grid;gap:4px}
+@media (max-width:680px){.top{grid-template-columns:1fr;gap:6px}.rank{font-size:60px}.facets{grid-template-columns:1fr}}
+.tie{font-size:14px;color:var(--muted);border-left:3px solid var(--ink);padding:4px 0 4px 12px;margin-top:8px}
+
+.domains{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.dom{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.dom.lead{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.dom .n{font-family:var(--display);font-variation-settings:"wdth" 116;font-weight:800;text-transform:uppercase;font-size:17px}
+.dom .cnt{font-family:var(--display);font-variation-settings:"wdth" 125;font-weight:900;font-size:44px;line-height:.9;font-variant-numeric:tabular-nums}
+.pips{display:flex;gap:4px}.pips i{width:16px;height:6px;border-radius:3px;background:var(--soft)}.pips i.on{background:var(--ink)}
+@media (max-width:760px){.domains{grid-template-columns:1fr 1fr}}
+
+.disc-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:22px;align-items:start}
+@media (max-width:760px){.disc-wrap{grid-template-columns:1fr}}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px}
+.bar{display:grid;grid-template-columns:34px 1fr 36px;align-items:center;gap:12px;padding:10px 0}
+.letter{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:900;font-size:18px}
+.track{position:relative;height:16px;background:var(--soft);border-radius:8px}
+.track::before{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:1px;background:var(--muted);opacity:.6}
+.fill{position:absolute;top:0;bottom:0;border-radius:8px}
+.val{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;font-size:14px}
+.axis{display:grid;grid-template-columns:34px 1fr 36px;gap:12px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.axis div{display:flex;justify-content:space-between}
+.style-name{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.swatch{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:900;font-size:26px;flex:none}
+
+.list{display:grid;margin-top:18px;border-top:1px solid var(--line)}
+.li{display:grid;grid-template-columns:40px 1fr 140px 40px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.li .no{font-family:var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.li .mini{height:6px;background:var(--soft);border-radius:3px;position:relative;overflow:hidden}
+.li .mini i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);border-radius:3px}
+.li .sc{font-family:var(--mono);font-size:13px;text-align:right;color:var(--muted)}
+@media (max-width:560px){.li{grid-template-columns:32px 1fr 64px}.li .sc{display:none}}
+.final{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:14px;margin-top:20px}
+.note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:46px;padding:22px 0 70px}
+
+.btn.sm{padding:11px 18px;min-height:42px;font-size:14px}
+.rcard{position:relative;overflow:hidden;padding-top:34px}
+.rcard .band{position:absolute;left:0;right:0;top:0;height:10px;display:flex}
+.rcard .band i{display:block;height:100%}
+.rcard li .n{color:var(--pc)}
+.rcard .legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12px;color:#B9B9B4}
+.rcard .legend span{display:inline-flex;align-items:center;gap:7px}
+.rcard .legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
+.how-send{margin:0;padding-left:20px;display:grid;gap:6px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);padding:11px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100% - 32px);text-align:center;z-index:10}
+.toast.show{opacity:1}
+/* ---------- PDF pages (fixed A4 at 96dpi, always light) ---------- */
+.pdf-root{position:fixed;left:-10000px;top:0;width:794px;z-index:-1;
+  --bg:#FFFFFF;--surface:#F6F6F4;--ink:#0B0B0C;--muted:#5F5F5C;--line:#E2E2DE;--soft:#ECECE9;--on-ink:#FFFFFF;
+  --d:#CF3F38;--i:#D9930D;--s:#2A8F62;--c:#335CCB;--logo-filter:none;color:#0B0B0C;font-family:var(--body);font-size:14px;line-height:1.5}
+.pdf-root .disp{font-variation-settings:normal}
+.pdf-root p{max-width:none}
+.pg{width:794px;height:1123px;background:#fff;padding:42px 56px 30px;display:flex;flex-direction:column;box-sizing:border-box}
+.pg-h{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pg-h img{height:15px;width:auto}
+.pg-c{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:18px}
+.pg-f{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.pdf-root .p-h1{font-size:52px;margin-top:10px}
+.pdf-root .p-h2{font-size:34px;margin-bottom:6px}
+.pdf-root .p-lead{font-size:14px;margin:8px 0 0}
+.pdf-root .p-cont{display:block}
+.pdf-root .p-cover .meta{margin-top:12px}
+.pdf-root .rcard{max-width:520px;margin:0 auto;width:520px}
+.pdf-root .rcard .nm{font-size:36px}
+.pdf-root .rcard li .t{font-size:20px}
+.pdf-root .p-toc ol{margin:8px 0 0;padding-left:20px;font-size:14px;display:grid;gap:2px}
+.pdf-root .top{grid-template-columns:78px 1fr;gap:6px 18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pdf-root .p-blk:last-child .top{border-bottom:0}
+.pdf-root .rank{font-size:56px}
+.pdf-root .top h3.disp{font-size:28px!important}
+.pdf-root .top .desc{font-size:14.5px;margin-top:6px}
+.pdf-root .facets{grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pdf-root .facet{padding:10px 12px;border-radius:12px}
+.pdf-root .facet h4{font-size:9.5px;margin-bottom:4px}
+.pdf-root .facet p,.pdf-root .facet ul{font-size:12.5px;line-height:1.45}
+.pdf-root .facet ul{gap:2px}
+.pdf-root .tie{font-size:12.5px}
+.pdf-root .p-domains{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.pdf-root .dom{padding:14px}
+.pdf-root .dom.lead{box-shadow:none!important;border:2px solid var(--ink)}
+.pdf-root .rcard{box-shadow:none!important}
+.pdf-root .chart{padding:14px 18px;margin-top:10px}
+.pdf-root .style-name h3.disp{font-size:26px}
+.pdf-root .p-facets2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pdf-root .li{grid-template-columns:40px 1fr 160px 40px;font-size:14px;padding:9px 0}
+.pdf-root .li .sc{display:block}
+.pdf-root .p-disc{font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:10px 0 0}
+
+.field select,textarea{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:14px;outline:none;font-size:16px}
+.field select:focus,textarea:focus{border-color:var(--ink)}
+table.ml{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px;font-variant-numeric:tabular-nums}
+table.ml th,table.ml td{padding:7px 4px;border-top:1px solid var(--line);text-align:center}
+table.ml th:first-child,table.ml td:first-child{text-align:left;color:var(--muted);font-weight:400}
+.code{font-family:var(--mono);font-size:12px;word-break:break-all;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;max-height:110px;overflow:auto;user-select:all}
+.pdf-root table.ml{font-size:12px;margin-top:10px}
+.pdf-root table.ml th,.pdf-root table.ml td{padding:4px}
+
+.fade{animation:fade .35s ease both}
+@keyframes fade{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+let LOGO_W; const LOGO = "data:image/png;base64,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";
+
+LOGO_W=LOGO;
+(()=>{const im=new Image();im.onload=()=>{try{const c=document.createElement("canvas");c.width=im.naturalWidth;c.height=im.naturalHeight;const x=c.getContext("2d");x.drawImage(im,0,0);x.globalCompositeOperation="source-in";x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);LOGO_W=c.toDataURL("image/png");document.querySelectorAll("img[data-w]").forEach(e=>{e.src=LOGO_W;e.style.filter="none"})}catch(e){}};im.src=LOGO})();
+/* ============ DATA ============ */
+const DIMS = {
+  D:{name:"Dominance",alias:"Si Pendobrak",color:"var(--d)",
+    core:"Berorientasi hasil, cepat, langsung, dan suka tantangan. Anda bergerak ketika orang lain masih menimbang.",
+    sell:"Menjual dengan percaya diri dan langsung ke inti. Kuat menghadapi prospek pengusaha dan pengambil keputusan, nyaman meminta komitmen, dan tidak gentar oleh penolakan.",
+    risk:"Bisa terkesan mendesak dan kurang mendengar. Administrasi, detail polis, dan follow-up layanan sering dianggap kurang penting.",
+    pressure:"Makin mengontrol, tidak sabar, dan bicara lebih keras. Cenderung mengambil alih pekerjaan orang lain.",
+    comm:"Langsung ke poin, fokus pada hasil dan pilihan. Hindari basa-basi panjang.",
+    lead:["Beri target menantang dan ruang otonomi; jangan micromanage.","Bicara singkat: hasil, tenggat, dan pilihan keputusan.","Salurkan daya saingnya lewat kontes dan papan skor terbuka."],
+    onboard:["Beri target aktivitas 30 hari yang menantang dengan papan skor terbuka.","Latih analisis kebutuhan sebelum closing agar kecepatan tidak mengorbankan ketepatan.","Ajak joint field work dengan leader sejak minggu pertama."],
+    partner:"Rekan bergaya S atau C, yang menjaga detail, layanan, dan follow-up yang sering Anda lewati.",
+    role:"Penjualan aktif, pasar pengusaha dan korporat, calon leader agensi."},
+  I:{name:"Influence",alias:"Si Penggerak",color:"var(--i)",
+    core:"Antusias, optimis, ekspresif, dan berorientasi pada orang. Energi Anda menular.",
+    sell:"Membangun kedekatan dengan cepat, presentasi hidup, dan jaringan kenalan luas. Kuat di prospek baru, seminar, konten, dan rekrutmen.",
+    risk:"Detail dan follow-up mudah terlewat. Bisa terlalu optimis menjanjikan sesuatu atau terlalu banyak bicara sehingga kebutuhan klien kurang tergali.",
+    pressure:"Menjadi tidak terorganisir, emosional, dan mencari dukungan orang lain. Bisa menghindari tugas yang membosankan.",
+    comm:"Hangat dan bersemangat, beri ruang bercerita. Tuliskan kesepakatan karena detail lisan mudah terlupa.",
+    lead:["Beri pengakuan publik untuk setiap pencapaian, sekecil apa pun.","Bantu dengan sistem sederhana: checklist harian dan pengingat follow-up.","Libatkan dalam acara, kelas, dan aktivitas tim yang interaktif."],
+    onboard:["Masukkan ke kelas atau event yang interaktif sejak minggu pertama.","Pasang sistem follow-up sederhana (CRM atau checklist harian) sejak hari pertama.","Beri pengakuan publik untuk setiap pencapaian awal."],
+    partner:"Rekan bergaya C, yang membawa struktur, ketelitian, dan kelengkapan dokumen.",
+    role:"Prospecting, seminar dan edukasi, konten media sosial, rekrutmen."},
+  S:{name:"Steadiness",alias:"Si Penjaga",color:"var(--s)",
+    core:"Sabar, stabil, setia, dan suportif. Anda membangun kepercayaan dengan konsisten.",
+    sell:"Pendengar yang baik, dipercaya keluarga, dan sangat kuat di layanan purna jual. Klien bertahan lama dan memberi referral.",
+    risk:"Ragu meminta keputusan, sungkan menawarkan ke orang dekat, dan lambat beradaptasi dengan perubahan mendadak.",
+    pressure:"Menarik diri, mengalah, dan memendam ketidaksetujuan. Terlihat setuju padahal tidak.",
+    comm:"Tenang, personal, dan bertahap. Jelaskan alasan di balik perubahan dan beri waktu untuk menyesuaikan.",
+    lead:["Beri rasa aman: langkah jelas, perubahan bertahap, tanpa kejutan.","Apresiasi secara personal, bukan hanya di depan umum.","Dampingi saat closing sampai kepercayaan dirinya terbentuk."],
+    onboard:["Berikan peta langkah onboarding yang jelas dan bertahap.","Mulai prospek dari pasar hangat dengan skrip yang sudah disiapkan.","Dampingi closing pertama secara langsung."],
+    partner:"Rekan bergaya D atau I, yang mendorong closing dan pembukaan prospek baru.",
+    role:"Pasar keluarga, layanan klien dan retensi, mentor agen baru."},
+  C:{name:"Conscientiousness",alias:"Si Analis",color:"var(--c)",
+    core:"Teliti, logis, sistematis, dan berstandar tinggi. Anda percaya pada fakta.",
+    sell:"Analisis kebutuhan yang tajam, perhitungan uang pertanggungan yang tepat, dan dokumen rapi. Sangat dipercaya klien profesional dan kritis.",
+    risk:"Terlalu banyak detail saat presentasi, lambat memutuskan, dan bisa terkesan dingin. Menunda aksi lapangan sambil menunggu informasi lengkap.",
+    pressure:"Menarik diri ke data, makin kritis, dan sulit menerima kesalahan, termasuk kesalahan sendiri.",
+    comm:"Berbasis data, terstruktur, dan tertulis. Beri waktu berpikir; jangan memaksa keputusan instan.",
+    lead:["Beri data, standar yang jelas, dan alasan logis di balik setiap target.","Beri waktu berpikir, lalu tetapkan tenggat keputusan yang tegas.","Akui keahliannya; jadikan rujukan tim untuk produk dan kepatuhan."],
+    onboard:["Berikan materi produk lengkap dan waktu untuk mempelajarinya.","Latih kalkulasi kebutuhan proteksi sebagai keunggulan utama.","Tetapkan tenggat agar analisis tidak menunda aksi lapangan."],
+    partner:"Rekan bergaya I, yang membawa kehangatan dan kecepatan membangun kedekatan.",
+    role:"Perencanaan keuangan, kasus nasabah bernilai besar, kepatuhan dan dukungan underwriting."}
+};
+const COMBO = {
+  DI:"Pendobrak yang karismatik: cepat bergerak dan mampu menggerakkan orang. Profil khas leader rekrutmen.",
+  DS:"Pendobrak yang stabil: mengejar hasil dengan cara yang konsisten dan dapat diandalkan.",
+  DC:"Pendobrak yang perfeksionis: menuntut hasil tinggi dengan standar kualitas tinggi.",
+  ID:"Penggerak yang berani: antusias, persuasif, dan cepat mengambil inisiatif.",
+  IS:"Penggerak yang hangat: mudah disukai dan tulus membangun hubungan jangka panjang.",
+  IC:"Komunikator yang terstruktur: mampu menjelaskan hal rumit dengan menarik sekaligus akurat.",
+  SD:"Penjaga yang gigih: tenang di permukaan, teguh pada target di dalam.",
+  SI:"Penjaga yang ramah: membuat orang nyaman, kuat di layanan dan referral.",
+  SC:"Penjaga yang cermat: stabil, rapi, dan sangat dapat diandalkan dalam proses.",
+  CD:"Analis yang tegas: berbasis data dan berani memutuskan berdasarkan fakta.",
+  CI:"Analis yang komunikatif: akurat sekaligus mampu meyakinkan dengan data.",
+  CS:"Analis yang tenang: sistematis, sabar, dan menjaga kualitas tanpa drama."
+};
+
+const DOMAINS = {
+  EKS:{name:"Eksekusi",sub:"Menggerakkan hasil",story:"Anda menang dengan membuat sesuatu terjadi. Aktivitas, disiplin, dan penyelesaian adalah mesin Anda. Di asuransi, ini berarti produktivitas yang stabil dan layanan yang tuntas.",role:"Produsen konsisten dan spesialis layanan klien."},
+  PGR:{name:"Pengaruh",sub:"Menggerakkan orang",story:"Anda menang dengan menggerakkan orang. Prospek, presentasi, dan keyakinan adalah mesin Anda. Di asuransi, ini adalah mesin penjualan dan rekrutmen.",role:"Field sales, presentasi, dan rekrutmen."},
+  REL:{name:"Relasi",sub:"Membangun kepercayaan",story:"Anda menang lewat kepercayaan. Hubungan jangka panjang adalah aset Anda. Di asuransi, ini menghasilkan retensi, referral, dan tim yang solid.",role:"Penasihat berbasis hubungan, retensi, dan mentor tim."},
+  PKR:{name:"Pemikiran",sub:"Mengolah arah",story:"Anda menang lewat cara berpikir. Analisis, visi, dan solusi membedakan Anda. Di asuransi, ini memposisikan Anda sebagai penasihat, bukan sekadar penjual.",role:"Perencana keuangan dan spesialis kasus kompleks."}
+};
+
+const THEMES = [
+ {id:"target",name:"Pemburu Target",en:"Target Hunter",dom:"EKS",
+  desc:"Anda hidup dari angka dan garis finis. Target yang jelas memberi energi; kemajuan yang terukur memberi kepuasan.",
+  field:"Mudah termotivasi oleh kontes, kualifikasi, dan papan peringkat. Anda menghitung mundur sisa hari dan premi yang dibutuhkan, lalu bergerak.",
+  act:["Pecah target tahunan menjadi target aktivitas mingguan: pertemuan, presentasi, closing.","Pasang papan skor pribadi yang Anda lihat setiap pagi.","Rayakan tonggak kecil agar energi tidak habis sebelum akhir tahun."],
+  blind:"Bisa mengejar angka sampai lupa kualitas kebutuhan klien. Target yang meleset bisa terasa seperti kegagalan pribadi.",
+  st:["Saya merasa paling hidup ketika ada target angka yang jelas.","Saya rutin menghitung berapa lagi yang harus saya capai untuk menutup target.","Kompetisi penjualan membuat saya bekerja lebih keras.","Hari terasa sia-sia jika saya tidak menghasilkan sesuatu yang bisa diukur.","Saya ingin tahu posisi saya di papan peringkat.","Saya lebih suka diberi target tinggi daripada target yang aman."]},
+ {id:"ritme",name:"Ritme",en:"Rhythm Builder",dom:"EKS",
+  desc:"Anda unggul karena konsisten. Hasil datang bukan dari suasana hati, tetapi dari sistem yang Anda jalankan setiap hari.",
+  field:"Jadwal prospek harian, follow-up terjadwal, catatan klien yang rapi. Agen dengan tema ini jarang kehabisan prospek karena aktivitasnya tidak pernah berhenti.",
+  act:["Kunci satu blok waktu tetap untuk prospecting setiap hari.","Gunakan checklist aktivitas harian dan review mingguan.","Jadikan rutinitas Anda SOP yang bisa ditiru tim."],
+  blind:"Bisa kaku ketika rencana berubah mendadak, dan frustrasi bekerja dengan orang yang serba spontan.",
+  st:["Saya bekerja paling baik dengan jadwal harian yang tetap.","Saya tetap menjalankan rutinitas kerja walau sedang tidak bersemangat.","Saya punya sistem sendiri untuk mencatat dan menindaklanjuti prospek.","Konsistensi kecil setiap hari lebih penting daripada usaha besar sesekali.","Saya merencanakan minggu saya sebelum minggu itu dimulai.","Saya terganggu ketika pekerjaan dilakukan tanpa urutan yang jelas."]},
+ {id:"tuntas",name:"Tuntas",en:"Ownership",dom:"EKS",
+  desc:"Kata-kata Anda adalah janji. Anda merasa memiliki setiap tugas sampai benar-benar selesai.",
+  field:"Klien merasa aman karena Anda mengurus polis, klaim, dan perubahan data sampai beres. Ini fondasi retensi dan referral.",
+  act:["Catat setiap janji ke klien dalam satu daftar lengkap dengan tenggatnya.","Belajar berkata tidak agar tidak memikul terlalu banyak.","Jadikan pengalaman mendampingi klaim sebagai cerita kepercayaan Anda."],
+  blind:"Sulit mendelegasikan, dan bisa kelelahan karena memikul tanggung jawab orang lain.",
+  st:["Jika saya sudah berjanji, saya akan menepatinya apa pun caranya.","Saya tidak tenang sebelum urusan klien benar-benar beres.","Saya merasa bertanggung jawab penuh atas hasil pekerjaan saya.","Saya menindaklanjuti sampai selesai, bukan hanya sampai diserahkan.","Saya lebih suka mengerjakan sendiri daripada mengambil risiko tugas tidak beres.","Orang tahu mereka bisa mengandalkan saya."]},
+ {id:"teliti",name:"Teliti",en:"Precision",dom:"EKS",
+  desc:"Anda melihat detail yang dilewatkan orang lain. Bagi Anda, akurasi adalah bentuk rasa hormat.",
+  field:"SPAJ lengkap, data kesehatan tepat, ilustrasi benar. Pengajuan Anda jarang tertunda dan klaim klien jarang bermasalah karena dokumen sejak awal sudah rapi.",
+  act:["Buat checklist dokumen untuk setiap jenis produk.","Jadilah rujukan tim untuk kepatuhan dan underwriting.","Tetapkan batas cukup baik agar tidak terjebak menyempurnakan."],
+  blind:"Bisa lambat memutuskan. Terlalu banyak detail saat presentasi bisa membuat klien bingung.",
+  st:["Saya memeriksa ulang dokumen sebelum menyerahkannya.","Kesalahan kecil dalam data membuat saya tidak nyaman.","Saya membaca syarat dan ketentuan secara lengkap.","Saya lebih memilih akurat daripada cepat.","Saya menyadari angka yang tidak cocok, yang dilewatkan orang lain.","Saya memastikan setiap formulir terisi lengkap dan benar."]},
+ {id:"tangguh",name:"Tahan Banting",en:"Resilience",dom:"EKS",
+  desc:"Penolakan tidak menghentikan Anda. Anda cepat bangkit dan memaknai kata tidak sebagai bagian dari proses.",
+  field:"Di bisnis yang penuh penolakan, ini salah satu penentu terpenting untuk bertahan. Anda tetap menghubungi prospek berikutnya setelah ditolak.",
+  act:["Catat rasio Anda (berapa tidak untuk satu ya) agar penolakan terasa sebagai data.","Bagikan cerita bangkit Anda kepada agen baru.","Jaga sumber energi di luar pekerjaan."],
+  blind:"Bisa mengabaikan sinyal bahwa pendekatan perlu diubah, dan memendam emosi sampai menumpuk.",
+  st:["Penolakan tidak membuat saya berhenti mencoba.","Saya cepat bangkit setelah mengalami kegagalan.","Saya tetap bekerja dengan baik di bawah tekanan.","Kata tidak dari prospek tidak saya bawa ke hati.","Masa sulit justru membuat saya lebih gigih.","Saya bisa tetap fokus walau hasil belum terlihat."]},
+ {id:"pintu",name:"Pembuka Pintu",en:"Door Opener",dom:"PGR",
+  desc:"Anda menikmati bertemu orang baru dan memulai percakapan dengan orang asing.",
+  field:"Prospecting, pendekatan dingin, acara, dan networking. Daftar nama Anda tidak pernah habis.",
+  act:["Tetapkan target kenalan baru setiap minggu.","Berpasangan dengan rekan bertema Tuntas atau Ritme agar prospek ditindaklanjuti.","Siapkan pembuka percakapan yang mengarah ke kebutuhan proteksi."],
+  blind:"Banyak kenalan tetapi bisa dangkal. Antusias di awal, lemah di tindak lanjut.",
+  st:["Saya mudah memulai percakapan dengan orang yang baru saya temui.","Bertemu orang baru memberi saya energi.","Saya senang datang ke acara di mana saya belum kenal siapa pun.","Saya bisa membuat orang asing nyaman dalam beberapa menit.","Saya tidak ragu menghubungi orang yang belum mengenal saya.","Jaringan kenalan saya bertambah dengan cepat."]},
+ {id:"cerita",name:"Pencerita",en:"Storyteller",dom:"PGR",
+  desc:"Anda bisa membuat hal rumit menjadi sederhana dan menyentuh. Kata-kata Anda membuat orang mengerti sekaligus merasakan.",
+  field:"Menjelaskan manfaat polis, presentasi produk, kelas edukasi, konten media sosial, dan cerita klaim yang membuat prospek tergerak.",
+  act:["Kumpulkan cerita klaim nyata (dengan izin klien) sebagai bahan presentasi.","Latih satu presentasi 3 menit untuk setiap produk utama.","Gunakan kemampuan ini untuk konten edukasi dan seminar."],
+  blind:"Bisa terlalu banyak bicara dan kurang mendengar. Gaya penyampaian bisa menutupi substansi.",
+  st:["Saya pandai menjelaskan hal rumit dengan bahasa sederhana.","Orang sering bilang penjelasan saya mudah dipahami.","Saya suka berbicara di depan kelompok.","Saya menggunakan cerita untuk membuat orang memahami sesuatu.","Saya senang membuat konten atau materi presentasi.","Saya bisa membuat orang merasakan pentingnya sesuatu lewat kata-kata."]},
+ {id:"tutup",name:"Penutup",en:"Closer",dom:"PGR",
+  desc:"Anda nyaman meminta keputusan. Anda tahu kapan percakapan sudah cukup dan saatnya bertindak.",
+  field:"Tingkat closing tinggi, tenang menghadapi keberatan, dan tidak membiarkan prospek menggantung terlalu lama.",
+  act:["Kuasai jawaban untuk lima keberatan yang paling sering muncul.","Akhiri setiap pertemuan dengan langkah berikutnya yang jelas.","Imbangi dengan analisis kebutuhan agar closing tetap tepat sasaran."],
+  blind:"Bisa terkesan mendesak. Polis berisiko lapse jika klien membeli karena tekanan, bukan karena paham.",
+  st:["Saya nyaman meminta orang untuk mengambil keputusan.","Saya tidak takut menghadapi keberatan atau penolakan secara langsung.","Saya tahu kapan saatnya berhenti menjelaskan dan mulai meminta komitmen.","Saya tidak suka membiarkan sesuatu menggantung tanpa keputusan.","Saya bisa membuat orang yang ragu menjadi yakin.","Negosiasi adalah bagian pekerjaan yang saya nikmati."]},
+ {id:"nakhoda",name:"Nakhoda",en:"Captain",dom:"PGR",
+  desc:"Anda mengambil kendali ketika arah tidak jelas. Orang cenderung mengikuti keputusan Anda.",
+  field:"Bibit leader agensi: memimpin tim, merekrut, menetapkan standar, dan berani mengambil keputusan sulit.",
+  act:["Pimpin satu inisiatif kecil, misalnya kelas mingguan tim.","Latih memimpin dengan pertanyaan, bukan hanya perintah.","Mulai bangun jalur rekrutmen sejak dini."],
+  blind:"Bisa dominan dan kurang sabar. Orang yang bergerak lebih lambat bisa merasa tertinggal.",
+  st:["Saya secara alami mengambil kendali ketika kelompok tidak punya arah.","Saya berani mengambil keputusan sulit walau tidak populer.","Saya ingin memimpin tim sendiri suatu hari nanti.","Orang lain cenderung mengikuti arahan saya.","Saya nyaman menyampaikan pendapat yang berbeda secara terbuka.","Saya suka menetapkan standar dan menagih orang lain untuk mencapainya."]},
+ {id:"yakin",name:"Yakin Diri",en:"Self-Belief",dom:"PGR",
+  desc:"Anda percaya pada kemampuan dan pilihan Anda sendiri. Keyakinan itu menular ke orang di sekitar Anda.",
+  field:"Prospek dan klien merasa tenang karena Anda yakin pada solusi yang Anda tawarkan. Anda berani memasang target besar.",
+  act:["Gunakan ketenangan Anda saat membicarakan risiko dengan klien.","Minta umpan balik rutin dari mentor agar keyakinan tetap terkalibrasi.","Jadikan perjalanan karier Anda bahan cerita rekrutmen."],
+  blind:"Bisa terlihat arogan dan kurang terbuka terhadap masukan.",
+  st:["Saya yakin bisa berhasil di bidang apa pun yang saya tekuni.","Saya jarang meragukan keputusan yang sudah saya buat.","Saya percaya pendapatan saya ditentukan oleh usaha saya sendiri.","Saya tetap yakin walau orang lain meragukan rencana saya.","Saya merasa layak untuk meraih keberhasilan besar.","Saya tidak butuh persetujuan orang lain untuk mulai bertindak."]},
+ {id:"peka",name:"Peka Rasa",en:"Empath",dom:"REL",
+  desc:"Anda bisa merasakan apa yang dirasakan orang lain, bahkan sebelum mereka mengatakannya.",
+  field:"Klien membuka kekhawatiran sebenarnya tentang keluarga, kesehatan, dan uang. Penjualan Anda berangkat dari kebutuhan, bukan dari produk.",
+  act:["Gunakan pertanyaan terbuka dan biarkan klien bercerita.","Catat kekhawatiran klien, bukan hanya datanya.","Jaga energi Anda setelah mendampingi klaim yang berat."],
+  blind:"Bisa menunda closing karena takut membebani, dan mudah terbawa emosi klien.",
+  st:["Saya bisa merasakan suasana hati orang lain tanpa mereka berkata apa-apa.","Orang sering menceritakan masalah pribadinya kepada saya.","Saya ikut merasakan kekhawatiran klien tentang keluarganya.","Saya memperhatikan perubahan kecil pada ekspresi seseorang.","Saya mendengarkan untuk memahami, bukan untuk membalas.","Saya mudah memahami sudut pandang orang yang berbeda dengan saya."]},
+ {id:"jalin",name:"Penjalin",en:"Network Weaver",dom:"REL",
+  desc:"Anda membangun hubungan jangka panjang. Bagi Anda, klien adalah relasi seumur hidup.",
+  field:"Referral, retensi, penjualan lanjutan, dan klien yang bertahan bersama Anda bertahun-tahun.",
+  act:["Bangun jadwal sentuhan berkala: ulang tahun, review polis tahunan.","Jadikan permintaan referral bagian alami dari hubungan.","Kelola database relasi agar tidak bergantung pada ingatan."],
+  blind:"Sungkan menawarkan ke orang dekat, dan bisa menghabiskan waktu pada hubungan yang tidak produktif.",
+  st:["Saya menjaga hubungan dengan teman lama selama bertahun-tahun.","Banyak peluang saya datang dari rekomendasi orang yang mengenal saya.","Saya lebih suka hubungan yang dalam daripada banyak kenalan.","Saya mengingat hal penting dalam hidup orang-orang di sekitar saya.","Saya senang memperkenalkan orang yang saya kenal satu sama lain.","Klien saya juga saya anggap sebagai teman."]},
+ {id:"tumbuh",name:"Penumbuh",en:"People Grower",dom:"REL",
+  desc:"Anda melihat potensi pada orang lain dan senang melihat mereka berkembang.",
+  field:"Mentor agen baru, pelatih kelas onboarding, dan calon leader yang mampu menduplikasi diri.",
+  act:["Dampingi satu agen baru sejak bulan pertamanya.","Gunakan rencana pengembangan 30-60-90 hari.","Rayakan kemajuan kecil anggota tim secara terbuka."],
+  blind:"Bisa terlalu lama bertahan pada orang yang tidak mau berkembang, dan lupa pada target pribadi.",
+  st:["Saya senang melihat orang lain berkembang karena bantuan saya.","Saya melihat potensi pada orang yang belum menyadarinya sendiri.","Saya sabar mengajari orang baru.","Keberhasilan anggota tim terasa seperti keberhasilan saya.","Saya suka memberi umpan balik yang membangun.","Saya sering menjadi tempat bertanya bagi rekan yang lebih baru."]},
+ {id:"amanah",name:"Amanah",en:"Trustee",dom:"REL",
+  desc:"Anda memegang prinsip. Kepentingan klien dan kejujuran adalah garis yang tidak Anda lewati.",
+  field:"Klien dan tim mempercayai Anda. Anda menawarkan yang benar-benar dibutuhkan, menjelaskan pengecualian polis dengan jujur, dan menjaga nama baik profesi.",
+  act:["Jadikan nilai-nilai Anda bagian dari cerita personal branding.","Gunakan transparansi sebagai pembeda di pasar.","Bantu tim menjaga standar etika dan kepatuhan."],
+  blind:"Bisa kaku dan menghakimi, dan sulit bekerja dengan orang yang standarnya berbeda.",
+  st:["Saya tidak akan menjual sesuatu yang tidak benar-benar dibutuhkan klien.","Saya memegang teguh nilai saya walau ada godaan keuntungan.","Saya menjelaskan kekurangan suatu produk secara jujur.","Pekerjaan saya harus bermakna, bukan hanya menghasilkan uang.","Saya ingin dikenal sebagai orang yang bisa dipercaya.","Saya merasa terpanggil untuk melindungi keluarga orang lain."]},
+ {id:"satu",name:"Pemersatu",en:"Unifier",dom:"REL",
+  desc:"Anda membuat orang merasa diterima dan menyatukan kelompok.",
+  field:"Budaya tim agensi, kegiatan bersama, dan membuat agen bertahan karena merasa menjadi bagian dari keluarga besar.",
+  act:["Ambil peran mengelola komunitas atau acara tim.","Sambut setiap agen baru secara personal di minggu pertamanya.","Jembatani perbedaan pendapat sebelum menjadi konflik."],
+  blind:"Menghindari konflik yang sebenarnya perlu dihadapi, dan sulit memberi teguran.",
+  st:["Saya memastikan tidak ada orang yang merasa tertinggal dalam kelompok.","Saya berusaha mencari titik temu ketika ada perbedaan pendapat.","Suasana tim yang hangat penting bagi saya.","Saya menyambut orang baru agar cepat merasa menjadi bagian.","Saya lebih suka bekerja bersama daripada sendirian.","Saya sering menjadi penengah ketika ada ketegangan."]},
+ {id:"urai",name:"Pengurai",en:"Analyst",dom:"PKR",
+  desc:"Anda butuh data dan logika. Anda menemukan pola dan sebab di balik angka.",
+  field:"Analisis kebutuhan finansial, perhitungan uang pertanggungan, perbandingan produk, dan klien profesional yang kritis.",
+  act:["Kuasai kalkulasi kebutuhan proteksi: pengganti penghasilan, dana pendidikan, dana penyakit kritis.","Sajikan angka dalam visual yang sederhana.","Gunakan data aktivitas Anda untuk evaluasi mingguan."],
+  blind:"Bisa terlalu teknis untuk klien, dan menunda tindakan sambil menunggu data lengkap.",
+  st:["Saya ingin melihat data sebelum percaya pada suatu klaim.","Saya senang menghitung dan membandingkan angka.","Saya mencari sebab di balik setiap hasil, baik maupun buruk.","Saya lebih percaya pada logika daripada perasaan.","Saya suka membedah masalah menjadi bagian-bagian kecil.","Saya menghitung kebutuhan finansial dengan rinci sebelum memberi rekomendasi."]},
+ {id:"visi",name:"Visioner",en:"Visionary",dom:"PKR",
+  desc:"Anda melihat masa depan dengan jelas dan membuat orang lain ikut melihatnya.",
+  field:"Perencanaan jangka panjang klien (pensiun, pendidikan anak, warisan), visi karier untuk calon rekrutan, dan rencana bisnis agensi.",
+  act:["Gunakan gambaran masa depan keluarga klien dalam presentasi.","Tuliskan visi karier 5 tahun Anda dan bagikan ke tim.","Pasangkan visi dengan rencana aksi mingguan."],
+  blind:"Bisa mengabaikan pekerjaan harian, atau membuat janji besar tanpa langkah konkret.",
+  st:["Saya sering membayangkan seperti apa hidup saya lima atau sepuluh tahun lagi.","Saya bisa membuat orang lain bersemangat tentang masa depan.","Saya memikirkan dampak jangka panjang dari keputusan hari ini.","Saya punya gambaran jelas tentang karier yang ingin saya bangun.","Saya senang membicarakan rencana besar dan kemungkinan baru.","Saya membantu orang melihat apa yang bisa terjadi jika mereka bersiap sejak sekarang."]},
+ {id:"ilmu",name:"Haus Ilmu",en:"Knowledge Seeker",dom:"PKR",
+  desc:"Proses belajar itu sendiri memberi Anda energi.",
+  field:"Cepat menguasai produk baru, regulasi, ujian lisensi, sertifikasi profesional, dan teknologi kerja.",
+  act:["Jadwalkan satu sertifikasi atau kursus setiap tahun.","Ajarkan kembali apa yang baru Anda pelajari.","Ubah pengetahuan baru menjadi aksi lapangan dalam 7 hari."],
+  blind:"Bisa terlalu lama belajar dan menunda praktik. Sertifikat bertambah, hasil belum tentu.",
+  st:["Saya senang mempelajari hal baru, apa pun topiknya.","Saya cepat memahami produk atau aturan baru.","Saya rutin membaca, ikut kelas, atau menonton materi pengembangan diri.","Saya ingin mengambil sertifikasi profesional.","Saya bosan jika pekerjaan tidak memberi hal baru untuk dipelajari.","Saya mencari tahu cara kerja sesuatu sampai benar-benar paham."]},
+ {id:"solusi",name:"Pemecah Masalah",en:"Problem Solver",dom:"PKR",
+  desc:"Anda tertarik pada masalah dan senang menemukan jalan keluarnya.",
+  field:"Kasus underwriting sulit, klaim bermasalah, keberatan yang tidak biasa, dan solusi untuk kebutuhan klien yang kompleks.",
+  act:["Jadilah rujukan tim untuk kasus sulit.","Dokumentasikan solusi Anda menjadi panduan tim.","Kenali kapan sebuah masalah perlu dieskalasi."],
+  blind:"Fokus pada yang rusak sehingga bisa melewatkan apa yang sudah berjalan baik.",
+  st:["Saya senang ditugasi menyelesaikan masalah yang rumit.","Ketika ada yang tidak beres, saya langsung mencari penyebabnya.","Saya bisa menemukan jalan keluar ketika orang lain buntu.","Kasus sulit membuat saya penasaran, bukan stres.","Saya suka merancang solusi yang sesuai dengan situasi unik seseorang.","Saya senang memperbaiki proses yang tidak efisien."]},
+ {id:"ide",name:"Peracik Ide",en:"Idea Maker",dom:"PKR",
+  desc:"Anda melihat cara-cara baru. Ide mengalir ketika Anda memikirkan masalah atau peluang.",
+  field:"Strategi prospek baru, konten, kampanye, cara unik mendekati segmen pasar, dan otomasi kerja.",
+  act:["Tampung ide di satu tempat, lalu pilih satu untuk dieksekusi setiap bulan.","Uji ide dalam skala kecil sebelum diluncurkan.","Berpasangan dengan rekan bertema Ritme atau Tuntas."],
+  blind:"Banyak memulai, sedikit menyelesaikan. Cepat bosan dengan rutinitas yang sebenarnya menghasilkan.",
+  st:["Ide-ide baru sering muncul di kepala saya.","Saya suka mencari cara yang berbeda dari biasanya.","Saya senang merancang strategi atau kampanye baru.","Saya mudah menghubungkan ide dari bidang yang berbeda.","Saya bosan jika harus melakukan hal yang sama dengan cara yang sama terus-menerus.","Saya senang memakai teknologi baru untuk mempermudah pekerjaan."]}
+];
+const ROLES = ["Calon agen (belum berlisensi)","Agen baru (kurang dari 1 tahun)","Agen (1 tahun atau lebih)","Leader / Business Partner","Staf kantor / admin"];
+
+const HEX={D:"#CF3F38",I:"#D9930D",S:"#2A8F62",C:"#335CCB"};
+Object.keys(DIMS).forEach(k=>DIMS[k].hex=HEX[k]);
+/* 4 of the 6 statements per theme are used in the short version */
+const PICK=[[0,2,4,5],[0,1,2,4],[0,1,3,5],[0,1,2,4],[0,1,3,4],[0,1,3,4],[0,2,3,5],[0,1,2,4],[0,1,3,5],[0,1,3,5],[0,1,2,4],[0,1,3,5],[0,1,2,3],[0,1,2,5],[0,1,2,5],[0,1,2,5],[0,1,2,5],[0,1,3,4],[0,1,2,4],[0,1,2,5]];
+THEMES.forEach((t,i)=>{t.st=PICK[i].map(j=>t.st[j])});
+const DISC_GROUPS = [
+ {D:"Tegas, berani mengambil sikap",I:"Ramah, mudah mencairkan suasana",S:"Sabar, pendengar yang baik",C:"Cermat, berpikir sebelum bertindak"},
+ {D:"Suka tantangan yang sulit",I:"Antusias dan ekspresif",S:"Setia dan bisa diandalkan",C:"Rapi dan terstruktur"},
+ {D:"Kompetitif, ingin menang",I:"Optimis, selalu melihat sisi baik",S:"Senang membantu orang lain",C:"Analitis, berpegang pada fakta"},
+ {D:"Langsung ke inti persoalan",I:"Pandai membujuk",S:"Menghindari konflik",C:"Teliti terhadap detail"},
+ {D:"Mandiri, tidak suka diatur",I:"Spontan dan penuh ide",S:"Konsisten dan telaten",C:"Hati-hati terhadap risiko"},
+ {D:"Suka memimpin",I:"Suka bersosialisasi",S:"Suka suasana tim yang harmonis",C:"Suka bekerja fokus sendiri"},
+ {D:"Ambisius",I:"Penuh semangat",S:"Nyaman dengan keadaan yang stabil",C:"Kritis dan banyak bertanya"},
+ {D:"Mengendalikan situasi",I:"Mempengaruhi orang",S:"Mendukung orang lain",C:"Memeriksa kualitas"},
+ {D:"Bergerak cepat",I:"Bergerak dengan antusias",S:"Bergerak dengan tenang",C:"Bergerak dengan perhitungan"},
+ {D:"Menyukai terobosan",I:"Menyukai pengakuan dan pujian",S:"Menyukai kepastian dan rasa aman",C:"Menyukai standar kualitas tinggi"},
+ {D:"Keras kepala",I:"Kurang memperhatikan detail",S:"Lambat menerima perubahan",C:"Terlalu kritis"},
+ {D:"Fokus pada tujuan",I:"Fokus pada orang",S:"Fokus pada kebersamaan",C:"Fokus pada proses"}
+];
+/* 20 blocks, one theme from each domain per block; every theme 4x; no pair of themes meets twice */
+const BLOCKS=[[1,5,11,16],[2,7,14,16],[1,7,13,15],[1,6,12,18],[3,7,10,17],[4,6,10,16],[4,8,12,15],[0,7,12,19],[0,8,13,16],[3,8,11,19],[2,8,10,18],[0,9,14,18],[3,5,13,18],[1,9,10,19],[3,6,14,15],[0,6,11,17],[4,5,14,19],[2,9,11,15],[2,5,12,17],[4,9,13,17]];
+const NT=THEMES.length;
+
+/* ============ ENGINE ============ */
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const DK=["D","I","S","C"];
+const QUESTIONS=(()=>{
+  const r=rng(20261118);const q=[];
+  DISC_GROUPS.forEach(g=>q.push({kind:"d",opts:shuffle(DK,r).map(k=>({k,t:g[k]}))}));
+  const cnt=Array(NT).fill(0);
+  BLOCKS.forEach(b=>q.push({kind:"s",opts:shuffle(b,r).map(ti=>({k:ti,t:THEMES[ti].st[cnt[ti]++]}))}));
+  return q;
+})();
+const NQ=QUESTIONS.length;
+function compute(ans){
+  const M={D:0,I:0,S:0,C:0},L={D:0,I:0,S:0,C:0};
+  const sc=Array(NT).fill(4),most=Array(NT).fill(0);
+  QUESTIONS.forEach((q,i)=>{const a=ans[i];if(!a||a.m==null||a.l==null)return;const km=q.opts[a.m].k,kl=q.opts[a.l].k;
+    if(q.kind==="d"){M[km]++;L[kl]++}else{sc[km]++;sc[kl]--;most[km]++}});
+  const diff={};DK.forEach(k=>diff[k]=M[k]-L[k]);
+  const ord=DK.slice().sort((a,b)=>diff[b]-diff[a]||M[b]-M[a]);
+  const primary=ord[0],secondary=diff[ord[1]]>0?ord[1]:null;
+  const pressure=DK.slice().sort((a,b)=>L[a]-L[b]||M[b]-M[a])[0];
+  const rank=[...Array(NT).keys()].sort((a,b)=>sc[b]-sc[a]||most[b]-most[a]||a-b);
+  return{M,L,diff,primary,secondary,pressure,sc,rank,code:primary+(secondary||"")};
+}
+
+/* ============ STATE ============ */
+const KEY="rhys-talent-agen-v2";
+function fresh(){return{view:"intro",who:{n:"",r:"",l:""},ans:Array.from({length:NQ},()=>({m:null,l:null})),qi:0,demo:false,done:null}}
+let S=fresh();
+function save(){if(S.demo||S.opened)return;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||"null");if(x&&x.ans&&x.ans.length===NQ)return x}catch(e){}return null}
+const app=document.getElementById("app");
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad=n=>String(n).padStart(2,"0");
+function head(label){return `<header class="top"><img class="logo" src="${LOGO}" alt="RHYS"><span class="tag">${label}</span></header>`}
+
+function encode(){
+  const p={v:2,n:S.who.n,r:S.who.r,l:S.who.l,a:S.ans.map(x=>`${x.m??"x"}${x.l??"x"}`).join(""),t:S.done||Date.now()};
+  return btoa(unescape(encodeURIComponent(JSON.stringify(p)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+}
+function decode(code){
+  try{let c=code.trim().replace(/\s+/g,"").replace(/-/g,"+").replace(/_/g,"/");while(c.length%4)c+="=";
+    const p=JSON.parse(decodeURIComponent(escape(atob(c))));if(p.v!==2||!p.a||p.a.length!==NQ*2)return null;
+    const ans=[];for(let i=0;i<NQ;i++){const m=+p.a[2*i],l=+p.a[2*i+1];if(!(m>=0&&m<4&&l>=0&&l<4)||m===l)return null;ans.push({m,l})}
+    return{who:{n:p.n||"",r:p.r||"",l:p.l||""},ans,done:p.t||Date.now()};
+  }catch(e){return null}
+}
+
+/* ============ VIEWS ============ */
+function vIntro(){
+  const saved=load();const resume=saved&&saved.view==="q";const hasResult=saved&&saved.view==="result";
+  return `<div class="wrap fade">${head("Talent Profile · Agen Internal")}
+  <div class="hero"><span class="bubble">RHYS</span>
+    <h1 class="disp" style="margin-top:22px">Kenali cara<br>Anda menang.</h1>
+    <p class="lede">Asesmen RHYS untuk agen: gaya perilaku DISC dan 5 kekuatan utama Anda, ditafsirkan untuk pekerjaan di industri asuransi.</p></div>
+  <div class="facts"><span><b>${NQ}</b> pertanyaan</span><span><b>±10</b> menit</span><span>Hasil langsung tampil + PDF</span><span>Tidak ada jawaban benar atau salah</span></div>
+  <h3 class="disp" style="font-size:20px">Cara menjawab</h3>
+  <div class="how">
+    <div class="how-card"><span class="tag">Ketukan 1</span><b>Pilih yang paling mirip dengan Anda</b>
+      <div class="mini-opts"><span class="on">Sabar dan tenang <em>PALING MIRIP</em></span><span>Cepat mengambil keputusan</span><span>Ramah dan ceria</span><span>Teliti dan rapi</span></div></div>
+    <div class="how-card"><span class="tag">Ketukan 2</span><b>Dari sisanya, pilih yang paling tidak mirip</b>
+      <div class="mini-opts"><span class="on">Sabar dan tenang <em>PALING MIRIP</em></span><span class="off">Cepat mengambil keputusan <em>PALING TIDAK</em></span><span>Ramah dan ceria</span><span>Teliti dan rapi</span></div></div>
+  </div>
+  <p class="muted small" style="margin:-10px 0 26px">Selesai. Soal berikutnya muncul otomatis. Dua pilihan yang tidak Anda ketuk tidak dihitung, jadi tidak perlu dipikirkan.</p>
+  ${hasResult?`<div class="resume"><span>Hasil tes atas nama <b>${esc(saved.who.n)}</b> masih tersimpan di perangkat ini.</span><button class="btn" data-a="seeresult">Lihat hasil</button></div>`:""}
+  ${resume?`<div class="resume"><span>Tes atas nama <b>${esc(saved.who.n)}</b> belum selesai.</span><div class="row"><button class="btn" data-a="resume">Lanjutkan</button><button class="btn quiet" data-a="discard">Mulai baru</button></div></div>`:""}
+  <form class="who" id="who" novalidate>
+    <div class="field"><label for="f-n">Nama lengkap</label><input id="f-n" autocomplete="name" value="${esc(S.who.n)}" placeholder="Nama sesuai KTP"></div>
+    <div class="two">
+      <div class="field"><label for="f-r">Peran saat ini</label><select id="f-r"><option value="">Pilih peran</option>${ROLES.map(r=>`<option${S.who.r===r?" selected":""}>${esc(r)}</option>`).join("")}</select></div>
+      <div class="field"><label for="f-l">Nama leader / recruiter</label><input id="f-l" value="${esc(S.who.l)}" placeholder="Opsional"></div>
+    </div>
+    <p class="err" id="err"></p>
+    <div class="row" style="justify-content:space-between"><button class="btn" type="submit">Mulai asesmen →</button><button type="button" class="btn quiet" data-a="open">Buka hasil dengan kode</button></div>
+  </form>
+  <p class="note">Hasil hanya tampil di perangkat Anda dan tidak dikirim ke server mana pun. Setelah selesai, Anda bisa mengunduh PDF atau mengirim kode hasil ke leader.</p>
+  </div>`;
+}
+function vOpen(){
+  return `<div class="wrap fade">${head("Buka hasil")}
+  <div class="hero"><h2 class="disp">Buka hasil<br>dengan kode.</h2><p class="lede">Tempel kode hasil yang dikirim agen. Laporan lengkapnya akan tampil di sini.</p></div>
+  <form class="who" id="openf" novalidate><div class="field"><label for="f-code">Kode hasil</label><textarea id="f-code" rows="5" placeholder="Tempel kode di sini"></textarea></div>
+  <p class="err" id="err2"></p><div class="row"><button class="btn" type="submit">Tampilkan hasil →</button><button class="btn quiet" type="button" data-a="home">← Kembali</button></div></form></div>`;
+}
+function vQ(){
+  const i=S.qi,q=QUESTIONS[i],a=S.ans[i];const step=a.m==null?1:a.l==null?2:3;
+  const prompt=step===1?`Mana yang <mark>paling mirip</mark> dengan Anda?`:step===2?`Dari sisanya, mana yang <mark>paling tidak mirip</mark> dengan Anda?`:`Jawaban tersimpan.`;
+  return `<div class="wrap fade">${head("Talent Profile · Agen Internal")}
+  <div class="qhead"><span class="bubble">${pad(i+1)}</span><span class="tag">${pad(i+1)} / ${NQ}</span></div>
+  <div class="progress"><i style="width:${(i/NQ)*100}%"></i></div>
+  <div class="stepper"><span class="${step>1?"done":"cur"}">${step>1?"✓":"1"} Paling mirip</span><span class="${step>2?"done":step===2?"cur":""}">${step>2?"✓":"2"} Paling tidak mirip</span></div>
+  <h2 class="disp prompt">${prompt}</h2>
+  <div class="opts">${q.opts.map((o,j)=>{const isM=a.m===j,isL=a.l===j;
+    return `<button class="opt${isM?" most":""}${isL?" least":""}" data-a="pick" data-j="${j}" ${(step===2&&isM)?"disabled":""}><span class="txt">${esc(o.t)}</span>${isM?`<span class="lb">Paling mirip</span>`:isL?`<span class="lb">Paling tidak</span>`:""}</button>`}).join("")}</div>
+  <div class="nav"><button class="btn quiet" data-a="prev">← ${i===0?"Data diri":"Sebelumnya"}</button>
+    <div class="row">${step>1?`<button class="btn quiet" data-a="reset">Ulangi soal ini</button>`:""}${step===3?`<button class="btn" data-a="next">${i===NQ-1?"Lihat hasil":"Lanjut"} →</button>`:""}</div></div>
+  </div>`;
+}
+
+/* ---------- result context & blocks ---------- */
+const CLR={D:{name:"Merah",bright:"#F0625A"},I:{name:"Kuning",bright:"#F2B33A"},S:{name:"Hijau",bright:"#43BC86"},C:{name:"Biru",bright:"#7593F0"}};
+function ctx(){
+  const R=compute(S.ans);const top=R.rank.slice(0,5);
+  const P=DIMS[R.primary],Sec=R.secondary?DIMS[R.secondary]:null,Pr=DIMS[R.pressure];
+  const d5={},d10={};Object.keys(DOMAINS).forEach(k=>{d5[k]=0;d10[k]=0});top.forEach(i=>d5[THEMES[i].dom]++);R.rank.slice(0,10).forEach(i=>d10[THEMES[i].dom]++);
+  const leadDom=Object.keys(DOMAINS).sort((a,b)=>d5[b]-d5[a]||d10[b]-d10[a])[0];
+  const maxAbs=Math.max(6,...DK.map(k=>Math.abs(R.diff[k])));
+  const date=new Date(S.done||Date.now()).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"});
+  const tie=R.sc[R.rank[4]]===R.sc[R.rank[5]];
+  return{R,top,P,Sec,Pr,d5,d10,leadDom,maxAbs,date,tie,t1:THEMES[top[0]],t2:THEMES[top[1]],bottom:R.rank.slice(-3).map(i=>THEMES[i]),first:(S.who.n||"peserta").split(" ")[0]};
+}
+function cardHtml(c){
+  const {R,top,P,Sec,date,leadDom}=c;const pc=CLR[R.primary].bright,sc=R.secondary?CLR[R.secondary].bright:null;
+  const codes=[R.primary].concat(R.secondary?[R.secondary]:[]);
+  return `<div class="rcard" style="--pc:${pc};--sc:${sc||pc}">
+    <div class="band"><i style="flex:${sc?7:10};background:var(--pc)"></i>${sc?`<i style="flex:3;background:var(--sc)"></i>`:""}</div>
+    <div class="top-row"><img class="logo" data-w src="${LOGO_W}" style="${LOGO_W===LOGO?"filter:invert(1)":""}" alt="RHYS"><span class="k">Talent Profile · Agen</span></div>
+    <div><div class="k">Nama</div><div class="nm">${esc(S.who.n||"Peserta")}</div><div class="k" style="text-transform:none;letter-spacing:.02em">${date}${S.who.r?` · ${esc(S.who.r)}`:""}${S.who.l?` · Leader: ${esc(S.who.l)}`:""}</div></div>
+    <div><div class="k" style="margin-bottom:8px">Top 5 kekuatan</div>
+      <ol>${top.map((ti,j)=>`<li><span class="n">${j+1}</span><span class="t">${esc(THEMES[ti].name)}</span><span class="d">${esc(DOMAINS[THEMES[ti].dom].name)}</span></li>`).join("")}</ol></div>
+    <div><div class="k" style="margin-bottom:8px">Karakter dasar · DISC</div>
+      <div class="disc-row"><div class="sw">${codes.map(k=>`<span style="background:${DIMS[k].hex}">${k}</span>`).join("")}</div>
+      <div><div style="font-weight:600;font-size:17px">${P.alias}${Sec?" + "+Sec.alias.replace("Si ",""):""}</div><div style="font-size:13px;color:#9A9A95">${Sec?esc(COMBO[R.code].split(":")[0]):esc(P.name)}</div></div></div>
+      <div class="legend">${codes.map(k=>`<span><i style="background:${CLR[k].bright}"></i>${CLR[k].name} = ${k} · ${DIMS[k].name}</span>`).join("")}</div></div>
+    <div class="foot"><span>Domain terkuat: ${DOMAINS[leadDom].name}</span><span>RHYS</span></div>
+  </div>`;
+}
+function themeBlock(ti,rk){
+  const t=THEMES[ti];
+  return `<article class="top"><div class="rank">${pad(rk)}</div><div>
+    <span class="tag">${esc(t.en)}</span>
+    <h3 class="disp" style="font-size:clamp(28px,4.6vw,42px)">${esc(t.name)}<span class="chip">${esc(DOMAINS[t.dom].name)}</span></h3>
+    <p class="desc">${esc(t.desc)}</p>
+    <div class="facets">
+      <div class="facet"><h4>Di lapangan asuransi</h4><p>${esc(t.field)}</p></div>
+      <div class="facet"><h4>Titik buta</h4><p>${esc(t.blind)}</p></div>
+      <div class="facet full"><h4>Cara memaksimalkan</h4><ul>${t.act.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    </div></div></article>`;
+}
+function discChart(c){
+  const {R,maxAbs}=c;
+  return `${DK.map(k=>{const v=R.diff[k];const w=Math.abs(v)/maxAbs*50;return `<div class="bar"><span class="letter" style="background:${DIMS[k].color}">${k}</span><div class="track" role="img" aria-label="${DIMS[k].name} ${v}"><span class="fill" style="background:${DIMS[k].color};${v>=0?`left:50%;width:${w}%`:`right:50%;width:${w}%`}"></span></div><span class="val">${v>0?"+":""}${v}</span></div>`}).join("")}
+  <div class="axis"><span></span><div><span>−${maxAbs}</span><span>0</span><span>+${maxAbs}</span></div><span></span></div>
+  <table class="ml"><thead><tr><th></th>${DK.map(k=>`<th>${k}</th>`).join("")}</tr></thead><tbody>
+    <tr><td>M · paling mirip</td>${DK.map(k=>`<td>${R.M[k]}</td>`).join("")}</tr>
+    <tr><td>L · paling tidak</td>${DK.map(k=>`<td>${R.L[k]}</td>`).join("")}</tr>
+    <tr><td>M − L</td>${DK.map(k=>`<td><b>${R.diff[k]}</b></td>`).join("")}</tr></tbody></table>
+  <p class="small muted" style="margin:12px 0 0">Nilai M − L menunjukkan gaya yang paling Anda kenali dalam diri Anda. Total keempatnya selalu nol.</p>`;
+}
+function styleHead(c){const {P,Sec,R}=c;return `
+  <div class="style-name"><span class="swatch" style="background:${P.color}">${R.primary}</span><div><span class="tag">Gaya utama · ${P.name} · warna ${CLR[R.primary].name}</span><h3 class="disp">${P.alias}</h3></div></div>
+  <p style="font-size:18px;margin-top:0">${esc(P.core)}</p>
+  ${Sec?`<p class="muted">Kombinasi <b style="color:var(--ink)">${R.code}</b>: ${esc(COMBO[R.code])}</p>`:`<p class="muted">Gaya Anda terpusat pada satu dimensi, tanpa gaya kedua yang menonjol.</p>`}`}
+function discFacets(c){const {P,Pr,R}=c;return `
+  <div class="facet"><h4>Cara Anda menjual</h4><p>${esc(P.sell)}</p></div>
+  <div class="facet"><h4>Risiko yang perlu dijaga</h4><p>${esc(P.risk)}</p></div>
+  <div class="facet"><h4>Saat tertekan · cenderung ${R.pressure} (${Pr.alias})</h4><p>${esc(Pr.pressure)}</p></div>`}
+function domainGrid(c,cls){const {d5,d10,leadDom}=c;return `<div class="${cls}">${Object.entries(DOMAINS).map(([k,d])=>`<div class="dom${k===leadDom?" lead":""}"><span class="tag">${esc(d.sub)}</span><span class="n">${esc(d.name)}</span><span class="cnt">${d5[k]}</span><div class="pips">${[0,1,2,3,4].map(j=>`<i class="${j<d5[k]?"on":""}"></i>`).join("")}</div><span class="small muted">${d10[k]} dari 10 teratas</span></div>`).join("")}</div>`}
+function domainText(c){return `<p class="p-lead" style="font-size:18px;margin-top:22px">${esc(DOMAINS[c.leadDom].story)}</p><p class="muted">Arah peran yang paling alami: <b style="color:var(--ink)">${esc(DOMAINS[c.leadDom].role)}</b></p>`}
+function planIntro(c){const {t1,P,R}=c;return `<p style="font-size:18px;margin-top:14px">Kekuatan nomor satu Anda, <b>${esc(t1.name)}</b>, dijalankan dengan gaya <b>${P.alias}</b>. Artinya: ${esc(t1.desc.charAt(0).toLowerCase()+t1.desc.slice(1))} Gaya ${R.primary} membuat Anda ${esc(P.core.split(".")[0].toLowerCase())}.</p>`}
+function planFacets(c){const {P,t1,bottom}=c;return `
+  <div class="facet full"><h4>Fokus onboarding</h4><ul>${P.onboard.map(a=>`<li>${esc(a)}</li>`).join("")}<li>${esc(t1.act[0])}</li></ul></div>
+  <div class="facet"><h4>Partner ideal di tim</h4><p>${esc(P.partner)}</p></div>
+  <div class="facet"><h4>Peran yang cocok</h4><p>${esc(P.role)}</p></div>
+  <div class="facet full"><h4>Tema yang paling tidak alami</h4><p style="margin-bottom:8px">${bottom.map(t=>`<b>${esc(t.name)}</b>`).join(", ")}.</p><p class="muted">Ini bukan kelemahan yang harus dipaksa menjadi kekuatan. Kelola dengan sistem (checklist, jadwal, template) atau berpasangan dengan rekan yang kuat di area ini.</p></div>`}
+function leadFacets(c){const {P,t1,t2}=c;return `
+  <div class="facet"><h4>Gaya komunikasi</h4><p>${esc(P.comm)}</p></div>
+  <div class="facet"><h4>Yang perlu diawasi</h4><p>${esc(t1.blind)}</p></div>
+  <div class="facet full"><h4>Prinsip memimpin</h4><ul>${P.lead.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>
+  <div class="facet full"><h4>Pertanyaan untuk sesi coaching</h4><ul>
+    <li>Kapan terakhir kali kekuatan ${esc(t1.name)} membantu Anda menghasilkan sesuatu? Apa yang terjadi?</li>
+    <li>Bagaimana ${esc(t1.name)} dan ${esc(t2.name)} bisa dipakai bersama dalam satu pertemuan dengan prospek?</li>
+    <li>Dari tiga tema terbawah Anda, sistem atau partner apa yang bisa menutupinya bulan ini?</li></ul></div>`}
+function rankList(c){const {R}=c;return `<div class="list">${R.rank.slice(5).map((ti,j)=>`<div class="li"><span class="no">${pad(j+6)}</span><span>${esc(THEMES[ti].name)} <span class="small muted">· ${esc(DOMAINS[THEMES[ti].dom].name)}</span></span><span class="mini"><i style="width:${R.sc[ti]/8*100}%"></i></span><span class="sc">${R.sc[ti]}/8</span></div>`).join("")}</div>`}
+const TIE=c=>c.tie?`<p class="tie">Tema nomor 5 dan 6 memiliki skor yang sama, jadi keduanya sama kuatnya. Tema nomor 6 adalah <b style="color:var(--ink)">${esc(THEMES[c.R.rank[5]].name)}</b>.</p>`:"";
+const DISCLAIMER="Asesmen ini adalah alat refleksi dan coaching internal RHYS. Item dan nama tema disusun khusus untuk RHYS; ini bukan instrumen resmi Gallup CliftonStrengths® maupun Everything DiSC®, dan belum divalidasi secara psikometrik. Gunakan untuk membuka percakapan pengembangan, bukan sebagai dasar tunggal keputusan rekrutmen.";
+const sec=(n,tag,title)=>`<div class="sec-h"><span class="sec-n">${n}</span><span class="tag">${tag}</span></div><h2 class="disp p-h2">${title}</h2>`;
+
+function vResult(){
+  const c=ctx();const {top}=c;
+  const shareBtn=cls=>canShareFiles?`<button class="btn${cls}" data-a="sharepdf">Bagikan PDF</button>`:"";
+  return `${S.demo?`<div class="demo-banner">CONTOH LAPORAN · DATA FIKTIF</div>`:""}${S.opened?`<div class="demo-banner">DIBUKA DARI KODE HASIL</div>`:""}
+  <div class="wrap wide fade">${head("Laporan Talent Profile · Agen")}
+  <div class="shot-tip"><span class="bubble">1</span><div><p><b>Screenshot kartu di bawah ini</b>, atau unduh laporan lengkapnya dalam PDF untuk dikirim ke leader.</p>
+    <div class="row" style="margin-top:12px">${shareBtn(" sm")}<button class="btn sm${canShareFiles?" line":""}" data-a="pdf">Unduh PDF (A4)</button></div></div></div>
+  ${cardHtml(c)}
+  <section class="blk">${sec("01","Hasil utama","Top 5 kekuatan Anda")}
+    <p class="muted" style="margin-top:12px">Diurutkan dari yang paling dominan. Lima tema ini adalah cara alami Anda berpikir, merasa, dan bertindak, yang paling mungkin menjadi sumber keberhasilan Anda.</p>
+    ${TIE(c)}${top.map((ti,j)=>themeBlock(ti,j+1)).join("")}</section>
+  <section class="blk">${sec("02","Peta domain","Di mana kekuatan Anda berkumpul")}${domainGrid(c,"domains")}${domainText(c)}</section>
+  <section class="blk">${sec("03","Gaya perilaku","Profil DISC")}
+    <div class="disc-wrap"><div class="chart">${discChart(c)}</div><div>${styleHead(c)}<div class="facets" style="grid-template-columns:1fr">${discFacets(c)}</div></div></div></section>
+  <section class="blk">${sec("04","Penafsiran terpadu","Rencana 30 hari pertama")}${planIntro(c)}<div class="facets">${planFacets(c)}</div></section>
+  <section class="blk">${sec("05","Untuk leader","Cara memimpin "+esc(c.first))}<div class="facets">${leadFacets(c)}</div></section>
+  <section class="blk">${sec("06","Urutan lengkap","Tema 6 sampai 20")}${rankList(c)}</section>
+  <section class="blk">${sec("07","Simpan & kirim","Kirim ke leader")}
+    <div class="final">
+      <ol class="how-send">
+        <li><b>${canShareFiles?"Bagikan atau unduh PDF":"Unduh PDF"}.</b> Laporan lengkap ukuran A4, setiap bagian di halamannya sendiri.</li>
+        <li><b>Kirim via WhatsApp.</b> Ringkasan Top 5 dan gaya DISC, plus kode hasil. Leader cukup menempel kodenya di <b>Buka hasil dengan kode</b> untuk melihat laporan lengkap.</li>
+      </ol>
+      <div class="code" id="code">${encode()}</div>
+      <div class="row">${shareBtn("")}<button class="btn${canShareFiles?" line":""}" data-a="pdf">Unduh PDF (A4)</button>
+        <a class="btn line" href="https://wa.me/?text=${encodeURIComponent(waText(c))}" target="_blank" rel="noopener">Kirim via WhatsApp</a>
+        <button class="btn line" data-a="copycode">Salin kode</button></div>
+      <p class="small muted" style="margin:0" id="pdf-status" role="status" aria-live="polite">Hasil tidak disimpan di server. Kode di atas berisi seluruh jawaban sehingga laporan bisa dibuka ulang kapan saja.</p>
+      <div class="row"><button class="btn quiet" data-a="totop">↑ Kembali ke kartu hasil</button><button class="btn quiet" data-a="restart">Ulangi tes dari awal</button></div>
+    </div></section>
+  <p class="note">${DISCLAIMER}</p>
+  </div>`;
+}
+function waText(c){c=c||ctx();const {R,top,P}=c;
+  return `*RHYS Talent Profile · Agen*\nNama: ${S.who.n}\nPeran: ${S.who.r}\n\n*Top 5 kekuatan*\n${top.map((ti,j)=>`${j+1}. ${THEMES[ti].name}`).join("\n")}\n\n*Gaya DISC:* ${R.code} · ${P.alias} (warna ${CLR[R.primary].name})\n\nKode hasil (buka halaman RHYS Talent Profile Agen > Buka hasil dengan kode):\n${encode()}`}
+
+/* ---------- PDF (A4, one segment per page, blocks never split) ---------- */
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=()=>rej(new Error("Gagal memuat "+src));document.head.appendChild(s)})}
+async function pdfLibs(){
+  if(!window.html2canvas)await loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+  if(!window.jspdf)await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+}
+function pdfSegments(c){
+  const {top}=c;
+  return [
+    {title:"Kartu hasil",blocks:[`<div class="p-cover"><span class="tag">Laporan Talent Profile · Agen Internal</span><h1 class="disp p-h1">${esc(S.who.n||"Peserta")}</h1>
+      <div class="meta"><span>Tanggal <b>${c.date}</b></span>${S.who.r?`<span>Peran <b>${esc(S.who.r)}</b></span>`:""}${S.who.l?`<span>Leader <b>${esc(S.who.l)}</b></span>`:""}</div></div>`,
+      cardHtml(c),
+      `<div class="p-toc"><span class="tag">Isi laporan</span><ol><li>Top 5 kekuatan</li><li>Peta domain</li><li>Profil DISC</li><li>Rencana 30 hari pertama</li><li>Catatan untuk leader</li><li>Urutan lengkap tema 6 sampai 20</li></ol></div>`]},
+    {title:"Top 5 kekuatan",blocks:[sec("01","Hasil utama","Top 5 kekuatan Anda")+`<p class="muted p-lead">Diurutkan dari yang paling dominan. Lima tema ini adalah cara alami Anda berpikir, merasa, dan bertindak.</p>${TIE(c)}`,
+      ...top.map((ti,j)=>themeBlock(ti,j+1))]},
+    {title:"Peta domain",blocks:[sec("02","Peta domain","Di mana kekuatan Anda berkumpul")+domainGrid(c,"p-domains")+domainText(c)]},
+    {title:"Profil DISC",blocks:[sec("03","Gaya perilaku","Profil DISC")+`<div class="chart">${discChart(c)}</div>`,`<div>${styleHead(c)}</div>`,`<div class="p-facets2">${discFacets(c)}</div>`]},
+    {title:"Rencana 30 hari",blocks:[sec("04","Penafsiran terpadu","Rencana 30 hari pertama")+planIntro(c),`<div class="facets">${planFacets(c)}</div>`]},
+    {title:"Untuk leader",blocks:[sec("05","Untuk leader","Cara memimpin "+esc(c.first)),`<div class="facets">${leadFacets(c)}</div>`]},
+    {title:"Urutan lengkap",blocks:[sec("06","Urutan lengkap","Tema 6 sampai 20")+rankList(c),`<p class="p-disc">${DISCLAIMER}</p>`]}
+  ];
+}
+function buildPdfPages(c){
+  const root=document.createElement("div");root.className="pdf-root";document.body.appendChild(root);
+  const pages=[];
+  const newPage=(title,cont)=>{
+    const pg=document.createElement("div");pg.className="pg";
+    pg.innerHTML=`<div class="pg-h"><img src="${LOGO}" alt="RHYS"><span>Talent Profile · Agen · ${esc(S.who.n||"Peserta")}</span></div><div class="pg-c">${cont?`<span class="tag p-cont">${esc(title)} · lanjutan</span>`:""}</div><div class="pg-f"><span>RHYS Talent Profile · ${c.date}</span><span class="pg-n"></span></div>`;
+    root.appendChild(pg);pages.push(pg);return pg.querySelector(".pg-c");
+  };
+  pdfSegments(c).forEach(seg=>{
+    let box=newPage(seg.title,false);let placed=0;
+    seg.blocks.forEach(html=>{
+      const t=document.createElement("div");t.className="p-blk";t.innerHTML=html;box.appendChild(t);
+      if(box.scrollHeight>box.clientHeight+1&&placed>0){box.removeChild(t);box=newPage(seg.title,true);box.appendChild(t);placed=0}
+      placed++;
+    });
+  });
+  pages.forEach((p,i)=>p.querySelector(".pg-n").textContent=`Halaman ${i+1} dari ${pages.length}`);
+  return {root,pages};
+}
+async function makePdf(){
+  await pdfLibs();try{await document.fonts.ready}catch(e){}
+  const c=ctx();const {root,pages}=buildPdfPages(c);
+  try{
+    const {jsPDF}=window.jspdf;const doc=new jsPDF({unit:"mm",format:"a4",orientation:"portrait",compress:true});
+    for(let i=0;i<pages.length;i++){
+      const cv=await window.html2canvas(pages[i],{scale:2,backgroundColor:"#ffffff",logging:false,useCORS:true});
+      if(i)doc.addPage();doc.addImage(cv.toDataURL("image/jpeg",0.92),"JPEG",0,0,210,297,undefined,"FAST");
+    }
+    return doc.output("blob");
+  }finally{root.remove()}
+}
+let DL=null;
+setTimeout(async()=>{try{DL=await window.claude?.use?.("downloads")}catch(e){DL=null}},0);
+let pdfBusy=false,pdfCache=null;
+const pdfName=()=>"RHYS-Talent-Profile-Agen-"+(S.who.n||"Peserta").trim().replace(/[^\p{L}\p{N}]+/gu,"-").replace(/^-|-$/g,"")+".pdf";
+const canShareFiles=(()=>{try{return !!(navigator.canShare&&navigator.canShare({files:[new File(["x"],"x.pdf",{type:"application/pdf"})]}))}catch(e){return false}})();
+async function getPdf(){const key=JSON.stringify([S.who,S.ans]);if(pdfCache&&pdfCache.key===key)return pdfCache.blob;const blob=await makePdf();pdfCache={key,blob};return blob}
+function setBusy(on){document.querySelectorAll('[data-a="pdf"],[data-a="sharepdf"]').forEach(b=>{if(on){b.dataset.label=b.dataset.label||b.textContent;b.disabled=true;b.textContent="Menyiapkan PDF…"}else{b.disabled=false;b.textContent=b.dataset.label||b.textContent;delete b.dataset.label}})}
+function pdfFail(e){
+  const code=e&&e.code;const st=document.getElementById("pdf-status");
+  if(code==="declined"||(e&&e.name==="AbortError"))toast("Dibatalkan.");
+  else if(code==="rate_limited")toast("Tunggu sebentar, lalu coba lagi.");
+  else{toast("PDF belum bisa dibuat di perangkat ini.");if(st)st.textContent="PDF belum bisa dibuat di perangkat ini. Coba buka di browser lain, atau kirim kode hasil ke leader."}
+}
+async function onPdf(){
+  if(pdfBusy)return;pdfBusy=true;setBusy(true);
+  try{
+    const blob=await getPdf();const name=pdfName();
+    if(DL){await DL.save({filename:name,data:blob})}
+    else{const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
+    toast("PDF tersimpan. Kirim filenya ke leader Anda.");
+  }catch(e){pdfFail(e)}finally{setBusy(false);pdfBusy=false}
+}
+async function onSharePdf(){
+  if(pdfBusy)return;const key=JSON.stringify([S.who,S.ans]);
+  if(!(pdfCache&&pdfCache.key===key)){
+    pdfBusy=true;setBusy(true);
+    try{await getPdf()}catch(e){pdfFail(e);setBusy(false);pdfBusy=false;return}
+    setBusy(false);pdfBusy=false;
+    document.querySelectorAll('[data-a="sharepdf"]').forEach(b=>b.textContent="PDF siap · ketuk untuk bagikan");
+    toast("PDF siap. Ketuk sekali lagi untuk membagikan.");return;
+  }
+  try{await navigator.share({files:[new File([pdfCache.blob],pdfName(),{type:"application/pdf"})],title:"RHYS Talent Profile",text:"Hasil RHYS Talent Profile "+(S.who.n||"")})}
+  catch(e){if(!(e&&e.name==="AbortError"))toast("Perangkat ini belum mendukung berbagi file. Gunakan Unduh PDF.")}
+}
+function toast(t){let el=document.getElementById("toast");if(!el){el=document.createElement("div");el.id="toast";el.className="toast";el.setAttribute("role","status");document.body.appendChild(el)}el.textContent=t;el.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove("show"),2600)}
+async function copyText(t,msg){try{await navigator.clipboard.writeText(t);toast(msg)}catch(e){const c=document.getElementById("code");if(c){const rg=document.createRange();rg.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(rg)}toast("Kode sudah diblok. Tekan Ctrl/Cmd+C untuk menyalin.")}}
+
+/* ============ DEMO (#contoh) ============ */
+function demo(){
+  const r=rng(77);const favT=new Set([5,6,8,16,4]);const favD={D:4,I:6,S:1.2,C:1},avoidD={D:.6,I:.4,S:2,C:3};
+  const pick=w=>{const ks=Object.keys(w);let x=r()*ks.reduce((a,k)=>a+w[k],0);for(const k of ks){x-=w[k];if(x<0)return k}return ks[ks.length-1]};
+  const ans=QUESTIONS.map(q=>{
+    if(q.kind==="d"){const km=pick(favD);let kl;do{kl=pick(avoidD)}while(kl===km);return{m:q.opts.findIndex(o=>o.k===km),l:q.opts.findIndex(o=>o.k===kl)}}
+    const idx=[0,1,2,3];const fm=idx.filter(j=>favT.has(q.opts[j].k));const m=fm.length?fm[Math.floor(r()*fm.length)]:Math.floor(r()*4);
+    const rest=idx.filter(j=>j!==m&&!favT.has(q.opts[j].k));const l=rest.length?rest[Math.floor(r()*rest.length)]:idx.find(j=>j!==m);return{m,l}});
+  S={...fresh(),view:"result",who:{n:"Contoh Peserta",r:"Agen baru (kurang dari 1 tahun)",l:"Goh Hendro"},ans,demo:true,done:Date.now()};
+  render();window.scrollTo({top:0});
+}
+
+/* ============ RENDER & EVENTS ============ */
+let lastKey="",advT=null;
+function render(){
+  const v=S.view;const key=v+(v==="q"?S.qi:"");const anim=key!==lastKey;lastKey=key;
+  app.innerHTML=v==="q"?vQ():v==="result"?vResult():v==="open"?vOpen():vIntro();
+  if(!anim)app.querySelectorAll(".fade").forEach(el=>el.classList.remove("fade"));
+  const f=document.getElementById("who");
+  if(f)f.addEventListener("submit",e=>{e.preventDefault();
+    const n=document.getElementById("f-n").value.trim(),r=document.getElementById("f-r").value,l=document.getElementById("f-l").value.trim();
+    if(n.length<3){document.getElementById("err").textContent="Isi nama lengkap Anda (minimal 3 huruf).";document.getElementById("f-n").focus();return}
+    if(!r){document.getElementById("err").textContent="Pilih peran Anda saat ini.";document.getElementById("f-r").focus();return}
+    S=fresh();S.who={n,r,l};go("q")});
+  const o=document.getElementById("openf");
+  if(o)o.addEventListener("submit",e=>{e.preventDefault();const d=decode(document.getElementById("f-code").value);
+    if(!d){document.getElementById("err2").textContent="Kode tidak dikenali. Pastikan seluruh kode tersalin tanpa terpotong.";return}
+    S={...fresh(),...d,view:"result",opened:true};render();window.scrollTo({top:0})});
+}
+function go(v){S.view=v;save();render();window.scrollTo({top:0})}
+function advance(){if(S.qi<NQ-1){S.qi++;save();render();window.scrollTo({top:0})}else{S.done=Date.now();go("result")}}
+app.addEventListener("click",e=>{
+  const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a;
+  if(a==="pick"){
+    clearTimeout(advT);const x=S.ans[S.qi],j=+b.dataset.j;
+    if(x.m==null){x.m=j}
+    else if(x.l==null){if(j===x.m)return;x.l=j;save();render();advT=setTimeout(advance,420);return}
+    else{x.m=j;x.l=null}
+    save();render();return}
+  if(a==="reset"){clearTimeout(advT);S.ans[S.qi]={m:null,l:null};save();render();return}
+  if(a==="next"){clearTimeout(advT);advance();return}
+  if(a==="prev"){clearTimeout(advT);if(S.qi>0){S.qi--;save();render()}else go("intro");return}
+  if(a==="resume"){S=load();render();return}
+  if(a==="seeresult"){S=load();render();window.scrollTo({top:0});return}
+  if(a==="discard"){try{localStorage.removeItem(KEY)}catch(e){}S=fresh();render();return}
+  if(a==="open"){S.view="open";render();return}
+  if(a==="home"){S=fresh();render();return}
+  if(a==="pdf"){onPdf();return}
+  if(a==="sharepdf"){onSharePdf();return}
+  if(a==="copycode"){copyText(encode(),"Kode hasil tersalin");return}
+  if(a==="totop"){window.scrollTo({top:0,behavior:"smooth"});return}
+  if(a==="restart"){if(!b.dataset.sure){b.dataset.sure="1";b.textContent="Yakin? Hasil akan terhapus. Ketuk lagi";return}
+    try{if(!S.demo&&!S.opened)localStorage.removeItem(KEY)}catch(e){}S=fresh();if(location.hash==="#contoh")history.replaceState(null,"",location.pathname+location.search);go("intro");return}
+});
+function route(){if(location.hash==="#contoh")demo()}
+window.addEventListener("hashchange",route);
+function start(data){if(data&&data.view&&data.ans&&data.ans.length===NQ)S=data;render();route()}
+window.claude?.hot?.snapshot?.(()=>S);
+window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
+
+</script>
+</body>
+</html>
